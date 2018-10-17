@@ -1,5 +1,5 @@
 #include <iostream>
-#include "quicksort.hpp"
+#include "sort.hpp"
 
 using std::cout;
 using std::endl;
@@ -13,7 +13,7 @@ int main()
         cout << arr[i] << " ";
     }
     cout << endl;
-    quicksort(arr, 0, n-1);
+    mergesort(arr, 0, n-1);
     for (int i=0;i<n;i++)
     {
         cout << arr[i] << " ";
