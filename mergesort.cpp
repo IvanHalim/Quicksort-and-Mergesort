@@ -33,28 +33,28 @@ void merge(int arr[], int low, int mid, int high)
 
     // Copy data to temp arrays L[] and R[]
     for (int i=0;i<half1;i++)
-		array1[i] = arr[i+low];
-	for (int i=0;i<half2;i++)
-		array2[i] = arr[i+half1+low];
+	array1[i] = arr[i+low];
+    for (int i=0;i<half2;i++)
+	array2[i] = arr[i+half1+low];
 
     // Set the last element of the subarrays to be a very large number
     array1[half1] = std::numeric_limits<int>::max();
-	array2[half2] = std::numeric_limits<int>::max();
+    array2[half2] = std::numeric_limits<int>::max();
 
     // Merge the temp arrays back into arr[low..high]
     int i = 0;  // Initial index of first subarray
-	int j = 0;  // Initial index of second subarray
-	for (int k=low;k<=high;k++)
+    int j = 0;  // Initial index of second subarray
+    for (int k=low;k<=high;k++)
+    {
+	if (array1[i] <= array2[j])
 	{
-		if (array1[i] <= array2[j])
-		{
-			arr[k] = array1[i];
-			i++;
-		}
-		else
-		{
-			arr[k] = array2[j];
-			j++;
-		}
+	    arr[k] = array1[i];
+	    i++;
 	}
+	else
+	{
+	    arr[k] = array2[j];
+	    j++;
+	}
+    }
 }
