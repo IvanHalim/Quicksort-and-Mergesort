@@ -1,4 +1,4 @@
-#include "quicksort.hpp"
+#include "sort.hpp"
 
 int partition(int[], int, int);
 
