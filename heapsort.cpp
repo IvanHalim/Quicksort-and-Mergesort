@@ -46,7 +46,7 @@ void heap_sort(vector<int> arr, int size) {
 
     /*
      * Next we're going to put the maximum value of the heap
-     * To the right side of the array
+     * To the right side of the array one by one
      * Making sure that we heapify_down the unsorted array after each extraction
      */
     for (int i = size-1; i >= 0; i--) {
