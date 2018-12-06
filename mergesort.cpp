@@ -1,7 +1,4 @@
-#include <vector>
 #include "sort.hpp"
-
-using std::vector;
 
 void merge(vector<int>&, int, int, int);
 

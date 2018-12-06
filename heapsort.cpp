@@ -1,7 +1,4 @@
-#include <vector>
 #include "sort.hpp"
-
-using std::vector;
 
 // A utility function to swap two elements
 void swap(int &a, int &b) {
@@ -41,9 +38,9 @@ void heap_sort(vector<int> arr, int size) {
     /*
      * First we convert array arr[] into a heap using our heapify_down function
      * Bottom-up from the first non-leaf node to the root of the heap
-     * (n/2-1) is the first non-leaf node
+     * (size/2-1) is the first non-leaf node
      */
-    for (int i = n/2-1; i >= 0; i--) {
+    for (int i = size/2-1; i >= 0; i--) {
         heapify_down(arr, size, i);
     }
 
@@ -52,7 +49,7 @@ void heap_sort(vector<int> arr, int size) {
      * To the right side of the array
      * Making sure that we heapify_down the unsorted array after each extraction
      */
-    for (int i = n-1; i >= 0; i--) {
+    for (int i = size-1; i >= 0; i--) {
         swap(arr[0], arr[i]);
         heapify_down(arr, i, 0);
     }

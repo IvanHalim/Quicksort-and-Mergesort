@@ -1,7 +1,4 @@
-#include <vector>
 #include "sort.hpp"
-
-using std::vector;
 
 int partition(vector<int>&, int, int);
 

@@ -7,5 +7,6 @@ using std::vector;
 
 void quicksort(vector<int>&, int, int);
 void mergesort(vector<int>&, int, int);
+void heapsort(vector<int&, int);
 
 #endif
