@@ -1,9 +1,11 @@
-#include <limits>
+#include <vector>
 #include "sort.hpp"
 
-void merge(int[], int, int, int);
+using std::vector;
 
-void mergesort(int arr[], int low, int high) {
+void merge(vector<int>&, int, int, int);
+
+void mergesort(vector<int> &arr, int low, int high) {
 
     if (low < high) {
 
@@ -22,7 +24,7 @@ void mergesort(int arr[], int low, int high) {
 // Merges two subarray of arr[]
 // First subarray is arr[low..mid]
 // Second subarray is arr[mid+1..high]
-void merge(int arr[], int low, int mid, int high) {
+void merge(vector<int> &arr, int low, int mid, int high) {
     int half1 = mid - low + 1;
     int half2 = high - mid;
 
