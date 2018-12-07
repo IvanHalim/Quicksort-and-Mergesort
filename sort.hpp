@@ -11,7 +11,7 @@ class sort {
     public:
         sort()  {};
         void    quicksort(vector<int>&, int, int);
-        void    mergesort(vector<int>, int, int);
+        void    mergesort(vector<int>&, int, int);
         void    heapsort(vector<int>&, int);
 };
 
@@ -21,7 +21,7 @@ void swap(int &a, int &b) {
     b = temp;
 }
 
-void merge(vector<int> &arr, int low, int mid, int high) {
+void merge(vector<int> arr, int low, int mid, int high) {
 
     int half1 = mid - low + 1;
     int half2 = high - mid;
@@ -50,7 +50,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     }
 }
 
-void sort::mergesort(vector<int> arr, int low, int high) {
+void sort::mergesort(vector<int> &arr, int low, int high) {
     if (low < high) {
         int mid = low + (high-low)/2;
         mergesort(arr, low, mid);
