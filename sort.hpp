@@ -35,10 +35,10 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     int i = 0;
     int j = 0;
     for (int k=low;k<=high;k++) {
-        if (j >= half2 || array1[i] <= array2[j]) {
+        if (i < half1 && array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
-        } else {
+        } else if (j < half2 && array2[j] < array1[i]) {
             arr[k] = array2[j];
             j++;
         }
