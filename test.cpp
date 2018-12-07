@@ -35,7 +35,7 @@ int main() {
     sort mySort;
     mySort.mergesort(mergesort, 0, mergesort.size()-1);
     mySort.quicksort(quicksort, 0, quicksort.size()-1);
-    mySort.heapsort(heapsort, heapsort.size());
+    mySort.heapsort(heapsort, 0, heapsort.size());
 
     // Display the arrays
     display(arr);
