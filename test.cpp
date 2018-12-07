@@ -50,5 +50,8 @@ int main() {
     mySort.insert_sorted(quicksort, 7);
     display(quicksort);
 
+    // Test the set_union function
+    display(mySort.set_union(quicksort, mergesort));
+
     return 0;
 }

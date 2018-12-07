@@ -123,10 +123,29 @@ void sort::insert_sorted(vector<int>& arr, int value) {
     arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }
 
-/*vector<int> sort::set_union(vector<int> A, vector<int> B) {
-
-    vector<int> union;
+vector<int> sort::set_union(vector<int> A, vector<int> B) {
+    vector<int> set_union;
     int i = 0;
     int j = 0;
+    while (i < A.size() && j < B.size()) {
+        if (A[i] <= B[j]) {
+            set_union.push_back(A[i]);
+            i++;
+        } else {
+            set_union.push_back(B[j]);
+            j++;
+        }
+    }
 
-}*/
+    while (i < A.size()) {
+        set_union.push_back(A[i]);
+        i++;
+    }
+
+    while (j < B.size()) {
+        set_union.push_back(B[j]);
+        j++;
+    }
+
+    return set_union;
+}
