@@ -24,16 +24,13 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     int half1 = mid - low + 1;
     int half2 = high - mid;
 
-    int array1[half1 + 1];
-    int array2[half2 + 1];
+    int array1[half1];
+    int array2[half2];
 
     for (int i=0;i<half1;i++)
         array1[i] = arr[i+low];
     for (int i=0;i<half2;i++)
         array2[i] = arr[i+half1+low];
-
-    array1[half1] = 0;
-    array2[half2] = 0;
 
     int i = 0;
     int j = 0;
@@ -41,7 +38,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
         if (j >= half2 || array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
-        } else if (i >= half1) {
+        } else if (i >= half1 || array2[j] < array1[i]) {
             arr[k] = array2[j];
             j++;
         }
@@ -50,7 +47,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
 
 void sort::mergesort(vector<int> &arr, int low, int high) {
     if (low < high) {
-        int mid = (low + high) / 2;
+        int mid = low + (high-low)/2;
         mergesort(arr, low, mid);
         mergesort(arr, mid+1, high);
         merge(arr, low, mid, high);

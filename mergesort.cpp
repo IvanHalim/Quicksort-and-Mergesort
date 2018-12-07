@@ -10,7 +10,7 @@ void mergesort(vector<int> &arr, int low, int high) {
 
         // Same as (low + high)/2, but avoids overflow for
         // large low and high
-        int mid = low + (high - low)/2;
+        int mid = low + (high-low)/2;
 
         // Sort first and second halves
         mergesort(arr, low, mid);
