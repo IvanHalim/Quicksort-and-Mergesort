@@ -170,5 +170,5 @@ vector<int> sort::intersection(vector<int> A, vector<int> B) {
         }
     }
 
-    return set_union;
+    return intersection;
 }
