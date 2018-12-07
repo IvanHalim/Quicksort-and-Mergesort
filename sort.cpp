@@ -2,6 +2,7 @@
 #include <limits>
 
 using std::numeric_limits;
+using std::upper_bound;
 
 void swap(int &a, int &b) {
     int temp = a;
@@ -115,4 +116,8 @@ int sort::binary_search(vector<int> arr, int low, int high, int value) {
         }
     }
     return -1;
+}
+
+void sort::insert_sorted(vector<int>& arr, int value) {
+    arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }

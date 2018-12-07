@@ -46,5 +46,9 @@ int main() {
     // Test the binary search function
     cout << mySort.binary_search(quicksort, 0, arr.size()-1, 7) << endl;
 
+    // Test the insert_sorted function
+    mySort.insert_sorted(quicksort, 7);
+    display(quicksort);
+
     return 0;
 }
