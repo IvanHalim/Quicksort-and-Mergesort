@@ -121,10 +121,10 @@ int sort::binary_search(vector<int> arr, int low, int high, int value) {
 
 void sort::insert_sorted(vector<int>& arr, int value) {
     int i = arr.size()-1;
-    while (i > 0 && arr[i] > value) {
+    while (i >= 0 && arr[i] > value) {
         i--;
     }
-    arr.insert(arr.begin()+i, value);
+    arr.insert(arr.begin() + i + 1, value);
     // arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }
 
