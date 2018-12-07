@@ -128,11 +128,15 @@ vector<int> sort::set_union(vector<int> A, vector<int> B) {
     int i = 0;
     int j = 0;
     while (i < A.size() && j < B.size()) {
-        if (A[i] <= B[j]) {
+        if (A[i] < B[j]) {
             set_union.push_back(A[i]);
             i++;
-        } else {
+        } else if (B[j] < A[i]) {
             set_union.push_back(B[j]);
+            j++;
+        } else {
+            set_union.push_back(A[i]);
+            i++;
             j++;
         }
     }
