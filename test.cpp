@@ -32,9 +32,10 @@ int main() {
     vector<int> heapsort(arr.begin(), arr.end());
 
     // Sort the arrays
-    mergesort(mergesort, 0, mergesort.size()-1);
-    quicksort(quicksort, 0, quicksort.size()-1);
-    heapsort(heapsort, 0, heapsort.size()-1);
+    sort mySort;
+    mySort.mergesort(mergesort, 0, mergesort.size()-1);
+    mySort.quicksort(quicksort, 0, quicksort.size()-1);
+    mySort.heapsort(heapsort, 0, heapsort.size()-1);
 
     // Display the arrays
     display(arr);
@@ -43,23 +44,23 @@ int main() {
     display(heapsort);
 
     // Test the binary search function
-    cout << binary_search(quicksort, 0, arr.size()-1, 7) << endl;
+    cout << mySort.binary_search(quicksort, 0, arr.size()-1, 7) << endl;
 
     // Test the insert_sorted function
-    insert_sorted(quicksort, 7);
+    mySort.insert_sorted(quicksort, 7);
     display(quicksort);
 
     // Test the set_union function
-    display(set_union(quicksort, mergesort));
+    display(mySort.set_union(quicksort, mergesort));
 
     // Test the intersection function
-    display(intersection(quicksort, mergesort));
+    display(mySort.intersection(quicksort, mergesort));
 
     // Test the symmetric difference function
-    display(symm_diff(quicksort, mergesort));
+    display(mySort.symm_diff(quicksort, mergesort));
 
     // Test the remove function
-    remove(quicksort, 7);
+    mySort.remove(quicksort, 7);
     display(quicksort);
 
     return 0;
