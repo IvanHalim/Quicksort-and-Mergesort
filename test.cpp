@@ -43,5 +43,7 @@ int main() {
     display(quicksort);
     display(heapsort);
 
+    cout << mySort.binary_search(arr, 0, arr.size()-1, 7) << endl;
+
     return 0;
 }
