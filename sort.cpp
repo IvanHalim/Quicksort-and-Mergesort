@@ -153,3 +153,22 @@ vector<int> sort::set_union(vector<int> A, vector<int> B) {
 
     return set_union;
 }
+
+vector<int> sort::intersection(vector<int> A, vector<int> B) {
+    vector<int> intersection;
+    int i = 0;
+    int j = 0;
+    while (i < A.size() && j < B.size()) {
+        if (A[i] < B[j]) {
+            i++;
+        } else if (B[j] < A[i]) {
+            j++;
+        } else {
+            intersection.push_back(A[i]);
+            i++;
+            j++;
+        }
+    }
+
+    return set_union;
+}

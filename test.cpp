@@ -53,5 +53,8 @@ int main() {
     // Test the set_union function
     display(mySort.set_union(quicksort, mergesort));
 
+    // Test the intersection function
+    display(mySort.intersection(quicksort, mergesort));
+
     return 0;
 }
