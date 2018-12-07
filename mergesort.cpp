@@ -1,6 +1,8 @@
 #include <vector>
+#include <limits>
 
 using std::vector;
+using std::numeric_limits;
 
 void merge(vector<int>&, int, int, int);
 
@@ -28,8 +30,8 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     int half2 = high - mid;
 
     // create temp arrays
-    int array1[half1];
-    int array2[half2];
+    int array1[half1 + 1];
+    int array2[half2 + 1];
 
     // Copy data to temp arrays L[] and R[]
     for (int i=0;i<half1;i++)
@@ -37,11 +39,15 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     for (int i=0;i<half2;i++)
         array2[i] = arr[i+half1+low];
 
+    // Set the last element of the subarrays to be a very large number
+    array1[half1] = numeric_limits<int>::max();
+    array2[half2] = numeric_limits<int>::max();
+
     // Merge the temp arrays back into arr[low..high]
     int i = 0;  // Initial index of first subarray
     int j = 0;  // Initial index of second subarray
     for (int k=low;k<=high;k++) {
-        if (j >= half2 || array1[i] <= array2[j]) {
+        if (array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
         } else {
