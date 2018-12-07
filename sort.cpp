@@ -123,7 +123,6 @@ void sort::insert_sorted(vector<int> &arr, int value) {
         i--;
     }
     arr.insert(arr.begin() + i + 1, value);
-    // arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }
 
 bool sort::remove(vector<int> &arr, int value) {
@@ -132,7 +131,6 @@ bool sort::remove(vector<int> &arr, int value) {
         return false;
     }
     arr.erase(arr.begin() + pos);
-    // arr.erase(remove(arr.begin(), arr.end(), value), arr.end());
     return true;
 }
 
