@@ -120,7 +120,12 @@ int sort::binary_search(vector<int> arr, int low, int high, int value) {
 }
 
 void sort::insert_sorted(vector<int>& arr, int value) {
-    arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
+    int i = arr.size()-1;
+    while (i > 0 && arr[i] > value) {
+        i--;
+    }
+    arr.insert(arr.begin()+i, value);
+    // arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }
 
 vector<int> sort::set_union(vector<int> A, vector<int> B) {
