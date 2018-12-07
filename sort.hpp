@@ -116,12 +116,12 @@ void sort::heapsort(vector<int> &arr, int low, int high) {
     }
 }
 
-int sort::binary_search(vector<int> arr, int low, int high, int x) {
+int sort::binary_search(vector<int> arr, int low, int high, int value) {
     while (low <= high) {
         int mid = low + (high-low)/2;
-        if (arr[mid] == x) {
+        if (arr[mid] == value) {
             return mid;
-        } else if (arr[mid] > x) {
+        } else if (arr[mid] > value) {
             high = mid-1;
         } else {
             low = mid+1;
