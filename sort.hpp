@@ -8,6 +8,11 @@ using std::vector;
 using std::numeric_limits;
 
 class sort {
+    private:
+        void    swap(int&, int&);
+        void    merge(vector<int>&, int, int, int);
+        int     partition(vector<int>&, int, int);
+        void    heapify_down(vector<int>&, int, int);
     public:
         sort()  {};
         void    quicksort(vector<int>&, int, int);
@@ -16,13 +21,13 @@ class sort {
         int     binary_search(vector<int>, int, int, int);
 };
 
-void swap(int &a, int &b) {
+void sort::swap(int &a, int &b) {
     int temp = a;
     a = b;
     b = temp;
 }
 
-void merge(vector<int> &arr, int low, int mid, int high) {
+void sort::merge(vector<int> &arr, int low, int mid, int high) {
 
     int half1 = mid - low + 1;
     int half2 = high - mid;
@@ -60,7 +65,7 @@ void sort::mergesort(vector<int> &arr, int low, int high) {
     }
 }
 
-int partition(vector<int> &arr, int low, int high) {
+int sort::partition(vector<int> &arr, int low, int high) {
 
     int pivot = arr[high];
     int i = low - 1;
@@ -84,7 +89,7 @@ void sort::quicksort(vector<int> &arr, int low, int high) {
     }
 }
 
-void heapify_down(vector<int> &arr, int size, int parent) {
+void sort::heapify_down(vector<int> &arr, int size, int parent) {
 
     int largest = parent;
     int left_child = 2 * parent + 1;
