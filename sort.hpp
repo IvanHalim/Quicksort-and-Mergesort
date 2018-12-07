@@ -21,7 +21,7 @@ void swap(int &a, int &b) {
     b = temp;
 }
 
-void merge(vector<int> arr, int low, int mid, int high) {
+void merge(vector<int> &arr, int low, int mid, int high) {
 
     int half1 = mid - low + 1;
     int half2 = high - mid;
