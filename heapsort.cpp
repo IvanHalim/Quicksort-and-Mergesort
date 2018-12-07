@@ -1,3 +1,7 @@
+#include <vector>
+
+using std::vector;
+
 // A utility function to swap two elements
 void swap(int &a, int &b) {
     int temp = a;

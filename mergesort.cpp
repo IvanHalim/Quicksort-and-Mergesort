@@ -1,3 +1,7 @@
+#include <vector>
+
+using std::vector;
+
 void merge(vector<int>&, int, int, int);
 
 void mergesort(vector<int> &arr, int low, int high) {

@@ -1,3 +1,7 @@
+#include <vector>
+
+using std::vector;
+
 int partition(vector<int>&, int, int);
 
 // A utility function to swap two elements
