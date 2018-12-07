@@ -5,6 +5,7 @@
 #include <limits>
 
 using std::vector;
+using std::numeric_limits;
 
 class sort {
     public:
@@ -33,8 +34,8 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     for (int i=0;i<half2;i++)
         array2[i] = arr[i+half1+low];
 
-    array1[half1] = std::numeric_limits<int>::max();
-    array2[half2] = std::numeric_limits<int>::max();
+    array1[half1] = numeric_limits<int>::max();
+    array2[half2] = numeric_limits<int>::max();
 
     int i = 0;
     int j = 0;
