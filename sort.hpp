@@ -25,26 +25,23 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     int half1 = mid - low + 1;
     int half2 = high - mid;
 
-    int array1[half1];
-    int array2[half2];
+    int array1[half1 + 1];
+    int array2[half2 + 1];
 
     for (int i=0;i<half1;i++)
         array1[i] = arr[i+low];
     for (int i=0;i<half2;i++)
         array2[i] = arr[i+half1+low];
 
+    array1[half1] = std::numeric_limits<int>::max();
+    array2[half2] = std::numeric_limits<int>::max();
+
     int i = 0;
     int j = 0;
     for (int k=low;k<=high;k++) {
-        if (j >= half2) {
+        if (array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
-        } else if (array1[i] <= array2[j]) {
-            arr[k] = array1[i];
-            i++;
-        } else if (i >= half1) {
-            arr[k] = array2[j];
-            j++;
         } else {
             arr[k] = array2[j];
             j++;
