@@ -16,24 +16,32 @@ void display(vector<int> vect) {
 }
 
 int main() {
+
+    // Initialize the seed for the random number generator
     srand(time(0));
+
+    // Create an array of size 10 with random numbers between 1 and 10
     vector<int> arr;
     for (int i = 0; i < 10; i++) {
         arr.push_back(rand() % 10 + 1);
     }
-    sort mySort;
+
+    // Create copies of array arr
     vector<int> mergesort(arr.begin(), arr.end());
     vector<int> quicksort(arr.begin(), arr.end());
     vector<int> heapsort(arr.begin(), arr.end());
+
+    // Sort the arrays
+    sort mySort;
     mySort.mergesort(mergesort, 0, mergesort.size()-1);
     mySort.quicksort(quicksort, 0, quicksort.size()-1);
     mySort.heapsort(heapsort, heapsort.size());
+
+    // Display the arrays
     display(arr);
     display(mergesort);
     display(quicksort);
     display(heapsort);
-    mySort.quicksort(arr, 0, arr.size()-1);
-    display(arr);
 
     return 0;
 }
