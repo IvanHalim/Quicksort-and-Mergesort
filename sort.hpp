@@ -5,9 +5,7 @@
 
 using std::vector;
 
-class sort {
-    public:
-        sort()  {};
+struct sort {
         void    quicksort(vector<int>&, int, int);
         void    mergesort(vector<int>&, int, int);
         void    heapsort(vector<int>&, int, int);
