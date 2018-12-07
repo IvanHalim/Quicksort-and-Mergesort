@@ -56,5 +56,8 @@ int main() {
     // Test the intersection function
     display(mySort.intersection(quicksort, mergesort));
 
+    // Test the symmetric difference function
+    display(mySort.symm_diff(quicksort, mergesort));
+
     return 0;
 }

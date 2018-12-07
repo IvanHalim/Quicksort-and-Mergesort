@@ -172,3 +172,33 @@ vector<int> sort::intersection(vector<int> A, vector<int> B) {
 
     return intersection;
 }
+
+vector<int> sort::symm_diff(vector<int> A, vector<int> B) {
+    vector<int> symm_diff;
+    int i = 0;
+    int j = 0;
+    while (i < A.size() && j < B.size()) {
+        if (A[i] < B[j]) {
+            symm_diff.push_back(A[i]);
+            i++;
+        } else if (B[j] < A[i]) {
+            symm_diff.push_back(B[j]);
+            j++;
+        } else {
+            i++;
+            j++;
+        }
+    }
+
+    while (i < A.size()) {
+        symm_diff.push_back(A[i]);
+        i++;
+    }
+
+    while (j < B.size()) {
+        symm_diff.push_back(B[j]);
+        j++;
+    }
+
+    return symm_diff;
+}

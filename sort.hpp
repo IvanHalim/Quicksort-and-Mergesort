@@ -13,5 +13,6 @@ struct sort {
         void        insert_sorted(vector<int>&, int);
         vector<int> set_union(vector<int>, vector<int>);
         vector<int> intersection(vector<int>, vector<int>);
+        vector<int> symm_diff(vector<int>, vector<int>);
 };
 #endif
