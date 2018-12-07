@@ -5,8 +5,8 @@ using std::cout;
 using std::endl;
 
 void display(vector<int> vect) {
-    for (int x : vect)
-        cout << x << " ";
+    for (int i = 0; i < vect.size(); i++)
+        cout << vect[i] << " ";
     cout << endl;
 }
 
