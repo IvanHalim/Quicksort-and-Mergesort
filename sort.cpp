@@ -38,7 +38,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     }
 }
 
-void sort::mergesort(vector<int> &arr, int low, int high) {
+void mergesort(vector<int> &arr, int low, int high) {
     if (low < high) {
         int mid = low + (high-low)/2;
         mergesort(arr, low, mid);
@@ -63,7 +63,7 @@ int partition(vector<int> &arr, int low, int high) {
     return i+1;
 }
 
-void sort::quicksort(vector<int> &arr, int low, int high) {
+void quicksort(vector<int> &arr, int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
         quicksort(arr, low, pi-1);
@@ -88,7 +88,7 @@ void heapify_down(vector<int> &arr, int size, int parent) {
     }
 }
 
-void sort::heapsort(vector<int> &arr, int low, int high) {
+void heapsort(vector<int> &arr, int low, int high) {
 
     int size = high + 1;
     int root = low;
@@ -103,7 +103,7 @@ void sort::heapsort(vector<int> &arr, int low, int high) {
     }
 }
 
-int sort::binary_search(vector<int> arr, int low, int high, int value) {
+int binary_search(vector<int> arr, int low, int high, int value) {
     while (low <= high) {
         int mid = low + (high-low)/2;
         if (arr[mid] == value) {
@@ -117,7 +117,7 @@ int sort::binary_search(vector<int> arr, int low, int high, int value) {
     return -1;
 }
 
-void sort::insert_sorted(vector<int> &arr, int value) {
+void insert_sorted(vector<int> &arr, int value) {
     int i = arr.size()-1;
     while (i >= 0 && arr[i] > value) {
         i--;
@@ -126,7 +126,7 @@ void sort::insert_sorted(vector<int> &arr, int value) {
     // arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }
 
-bool sort::remove(vector<int> &arr, int value) {
+bool remove(vector<int> &arr, int value) {
     int pos = binary_search(arr, 0, arr.size()-1, value);
     if (pos == -1) {
         return false;
@@ -136,7 +136,7 @@ bool sort::remove(vector<int> &arr, int value) {
     return true;
 }
 
-vector<int> sort::set_union(vector<int> A, vector<int> B) {
+vector<int> set_union(vector<int> A, vector<int> B) {
     vector<int> set_union;
     int i = 0;
     int j = 0;
@@ -167,7 +167,7 @@ vector<int> sort::set_union(vector<int> A, vector<int> B) {
     return set_union;
 }
 
-vector<int> sort::intersection(vector<int> A, vector<int> B) {
+vector<int> intersection(vector<int> A, vector<int> B) {
     vector<int> intersection;
     int i = 0;
     int j = 0;
@@ -186,7 +186,7 @@ vector<int> sort::intersection(vector<int> A, vector<int> B) {
     return intersection;
 }
 
-vector<int> sort::symm_diff(vector<int> A, vector<int> B) {
+vector<int> symm_diff(vector<int> A, vector<int> B) {
     vector<int> symm_diff;
     int i = 0;
     int j = 0;
