@@ -2,6 +2,7 @@
 #define SORT_HPP
 
 #include <vector>
+#include <limits>
 
 using std::vector;
 
@@ -32,16 +33,16 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     for (int i=0;i<half2;i++)
         array2[i] = arr[i+half1+low];
 
-    array1[half1] = 0;
-    array2[half2] = 0;
+    array1[half1] = 11;
+    array2[half2] = 11;
 
     int i = 0;
     int j = 0;
     for (int k=low;k<=high;k++) {
-        if (j == half2 || array1[i] <= array2[j]) {
+        if (array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
-        } else if (i == half1 || array2[j] < array1[i]) {
+        } else {
             arr[k] = array2[j];
             j++;
         }
