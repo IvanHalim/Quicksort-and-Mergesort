@@ -11,6 +11,7 @@ struct sort {
         void        heapsort(vector<int>&, int, int);
         int         binary_search(vector<int>, int, int, int);
         void        insert_sorted(vector<int>&, int);
+        bool        remove(vector<int>&, int);
         vector<int> set_union(vector<int>, vector<int>);
         vector<int> intersection(vector<int>, vector<int>);
         vector<int> symm_diff(vector<int>, vector<int>);

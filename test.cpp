@@ -59,5 +59,9 @@ int main() {
     // Test the symmetric difference function
     display(mySort.symm_diff(quicksort, mergesort));
 
+    // Test the remove function
+    mySort.remove(quicksort, 7);
+    display(quicksort);
+
     return 0;
 }
