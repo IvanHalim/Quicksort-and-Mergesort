@@ -24,24 +24,12 @@ void merge(vector<int> &arr, int low, int mid, int high) {
     for (int i=0;i<half2;i++)
         array2[i] = arr[i+half1+low];
 
-    array1[half1] = 0;
-    array2[half2] = 0;
+    array1[half1] = numeric_limits<int>::max();
+    array2[half2] = numeric_limits<int>::max();
 
     int i = 0;
     int j = 0;
-    int k = low;
-    while (i < half1 || j < half2) {
-        if (j >= half2 || array1[i] <= array2[j]) {
-            arr[k] = array1[i];
-            i++;
-        } else if (i >= half1 || array1[i] > array2[j]){
-            arr[k] = array2[j];
-            j++;
-        }
-        k++;
-    }
-
-    /*for (int k=low;k<=high;k++) {
+    for (int k=low;k<=high;k++) {
         if (array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
@@ -49,7 +37,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
             arr[k] = array2[j];
             j++;
         }
-    }*/
+    }
 }
 
 void sort::mergesort(vector<int> &arr, int low, int high) {
