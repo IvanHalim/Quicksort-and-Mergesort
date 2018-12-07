@@ -50,7 +50,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
 
 void sort::mergesort(vector<int> &arr, int low, int high) {
     if (low < high) {
-        int mid = low + (high - low)/2;
+        int mid = (low + high) / 2;
         mergesort(arr, low, mid);
         mergesort(arr, mid+1, high);
         merge(arr, low, mid, high);
