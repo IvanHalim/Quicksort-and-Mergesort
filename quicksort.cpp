@@ -1,4 +1,4 @@
-int partition(vector<int>, int, int);
+int partition(vector<int>&, int, int);
 
 // A utility function to swap two elements
 void swap(int &a, int &b) {
@@ -11,7 +11,7 @@ void swap(int &a, int &b) {
    arr[] --> Array to be sorted,
    low --> Starting index,
    high --> Ending index */
-void quicksort(vector<int> arr, int low, int high) {
+void quicksort(vector<int> &arr, int low, int high) {
 
     if (low < high) {
         /* pi is partitioning index, arr[p] is now
@@ -30,7 +30,7 @@ void quicksort(vector<int> arr, int low, int high) {
    array, and places all smaller (smaller than pivot)
    to left of pivot and all greater elements to right
    of pivot */
-int partition(vector<int> arr, int low, int high) {
+int partition(vector<int> &arr, int low, int high) {
 
     int pivot = arr[high];  // Pivot
     int i = low - 1;        // Index of smaller element

@@ -13,12 +13,17 @@ void display(vector<int> vect) {
 int main() {
     vector<int> arr{10, 7, 8, 9, 1, 5};
     sort mySort;
-    vector<int> mergesort = mySort.mergesort(arr, 0, arr.size()-1);
-    vector<int> quicksort = mySort.quicksort(arr, 0, arr.size()-1);
-    vector<int> heapsort = mySort.heapsort(arr, arr.size());
+    vector<int> mergesort(arr.begin(), arr.end());
+    vector<int> quicksort(arr.begin(), arr.end());
+    vector<int> heapsort(arr.begin(), arr.end());
+    mySort.mergesort(mergesort, 0, mergesort.size()-1);
+    mySort.quicksort(quicksort, 0, quicksort.size()-1);
+    mySort.heapsort(heapsort, heapsort.size());
     display(mergesort);
     display(quicksort);
     display(heapsort);
+    display(arr);
+    mySort.quicksort(arr, 0, arr.size()-1);
     display(arr);
 
     return 0;

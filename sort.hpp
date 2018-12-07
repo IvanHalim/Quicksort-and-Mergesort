@@ -8,9 +8,9 @@ using std::vector;
 class sort {
     public:
         sort()  {};
-        void    quicksort(vector<int>, int, int);
-        void    mergesort(vector<int>, int, int);
-        void    heapsort(vector<int>, int);
+        void    quicksort(vector<int>&, int, int);
+        void    mergesort(vector<int>&, int, int);
+        void    heapsort(vector<int>&, int);
 };
 
 void swap(int &a, int &b) {
@@ -19,7 +19,7 @@ void swap(int &a, int &b) {
     b = temp;
 }
 
-void merge(vector<int> arr, int low, int mid, int high) {
+void merge(vector<int> &arr, int low, int mid, int high) {
 
     int half1 = mid - low + 1;
     int half2 = high - mid;
@@ -45,7 +45,7 @@ void merge(vector<int> arr, int low, int mid, int high) {
     }
 }
 
-void sort::mergesort(vector<int> arr, int low, int high) {
+void sort::mergesort(vector<int> &arr, int low, int high) {
     if (low < high) {
         int mid = low + (high - low)/2;
         mergesort(arr, low, mid);
@@ -54,7 +54,7 @@ void sort::mergesort(vector<int> arr, int low, int high) {
     }
 }
 
-int partition(vector<int> arr, int low, int high) {
+int partition(vector<int> &arr, int low, int high) {
 
     int pivot = arr[high];
     int i = low - 1;
@@ -70,7 +70,7 @@ int partition(vector<int> arr, int low, int high) {
     return i+1;
 }
 
-void sort::quicksort(vector<int> arr, int low, int high) {
+void sort::quicksort(vector<int> &arr, int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
         quicksort(arr, low, pi-1);
@@ -78,7 +78,7 @@ void sort::quicksort(vector<int> arr, int low, int high) {
     }
 }
 
-void heapify_down(vector<int> arr, int size, int parent) {
+void heapify_down(vector<int> &arr, int size, int parent) {
 
     int largest = parent;
     int left_child = 2 * parent + 1;
@@ -95,7 +95,7 @@ void heapify_down(vector<int> arr, int size, int parent) {
     }
 }
 
-void sort::heapsort(vector<int> arr, int size) {
+void sort::heapsort(vector<int> &arr, int size) {
 
     for (int i = size/2-1; i >= 0; i--) {
         heapify_down(arr, size, i);

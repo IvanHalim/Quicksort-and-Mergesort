@@ -1,6 +1,6 @@
-void merge(vector<int>, int, int, int);
+void merge(vector<int>&, int, int, int);
 
-void mergesort(vector<int> arr, int low, int high) {
+void mergesort(vector<int> &arr, int low, int high) {
 
     if (low < high) {
 
@@ -19,7 +19,7 @@ void mergesort(vector<int> arr, int low, int high) {
 // Merges two subarray of arr[]
 // First subarray is arr[low..mid]
 // Second subarray is arr[mid+1..high]
-void merge(vector<int> arr, int low, int mid, int high) {
+void merge(vector<int> &arr, int low, int mid, int high) {
     int half1 = mid - low + 1;
     int half2 = high - mid;
 

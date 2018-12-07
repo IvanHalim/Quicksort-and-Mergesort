@@ -6,7 +6,7 @@ void swap(int &a, int &b) {
 }
 
 // This is the heapify_down function of a maximizing heap
-void heapify_down(vector<int> arr, int size, int parent) {
+void heapify_down(vector<int> &arr, int size, int parent) {
 
     // First we assume that the parent node is the largest
     int largest = parent;
@@ -31,7 +31,7 @@ void heapify_down(vector<int> arr, int size, int parent) {
 }
 
 // Main function to do heap sort
-void heapsort(vector<int> arr, int size) {
+void heapsort(vector<int> &arr, int size) {
 
     /*
      * First we convert array arr[] into a heap using our heapify_down function
