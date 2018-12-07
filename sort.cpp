@@ -134,6 +134,7 @@ bool sort::remove(vector<int> &arr, int value) {
         return false;
     }
     arr.erase(arr.begin() + pos);
+    // arr.erase(upper_bound(arr.begin(), arr.end(), value));
     return true;
 }
 
