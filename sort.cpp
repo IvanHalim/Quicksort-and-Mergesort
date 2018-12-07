@@ -29,7 +29,19 @@ void merge(vector<int> &arr, int low, int mid, int high) {
 
     int i = 0;
     int j = 0;
-    for (int k=low;k<=high;k++) {
+    int k = low;
+    while (i < half1 || j < half2) {
+        if (j >= half2 || array1[i] <= array2[j]) {
+            arr[k] = array1[i];
+            i++;
+        } else {
+            arr[k] = array2[j];
+            j++;
+        }
+        k++;
+    }
+
+    /*for (int k=low;k<=high;k++) {
         if (array1[i] <= array2[j]) {
             arr[k] = array1[i];
             i++;
@@ -37,7 +49,7 @@ void merge(vector<int> &arr, int low, int mid, int high) {
             arr[k] = array2[j];
             j++;
         }
-    }
+    }*/
 }
 
 void sort::mergesort(vector<int> &arr, int low, int high) {
@@ -122,3 +134,11 @@ int sort::binary_search(vector<int> arr, int low, int high, int value) {
 void sort::insert_sorted(vector<int>& arr, int value) {
     arr.insert(upper_bound(arr.begin(), arr.end(), value), value);
 }
+
+/*vector<int> sort::set_union(vector<int> A, vector<int> B) {
+
+    vector<int> union;
+    int i = 0;
+    int j = 0;
+
+}*/
