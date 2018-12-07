@@ -35,7 +35,10 @@ void heapify_down(vector<int> &arr, int size, int parent) {
 }
 
 // Main function to do heap sort
-void heapsort(vector<int> &arr, int root, int size) {
+void heapsort(vector<int> &arr, int low, int high) {
+
+    int size = high + 1;
+    int root = low;
 
     /*
      * First we convert array arr[] into a heap using our heapify_down function

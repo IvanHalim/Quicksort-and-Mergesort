@@ -101,7 +101,10 @@ void heapify_down(vector<int> &arr, int size, int parent) {
     }
 }
 
-void sort::heapsort(vector<int> &arr, int root, int size) {
+void sort::heapsort(vector<int> &arr, int low, int high) {
+
+    int size = high + 1;
+    int root = low;
 
     for (int i = size/2-1; i >= root; i--) {
         heapify_down(arr, size, i);
