@@ -1,9 +1,7 @@
 #include "sort.hpp"
 #include <limits>
-#include <algorithm>
 
 using std::numeric_limits;
-using std::upper_bound;
 
 void swap(int &a, int &b) {
     int temp = a;
