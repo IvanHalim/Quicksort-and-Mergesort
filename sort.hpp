@@ -12,7 +12,8 @@ class sort {
         sort()  {};
         void    quicksort(vector<int>&, int, int);
         void    mergesort(vector<int>&, int, int);
-        void    heapsort(vector<int>&, int);
+        void    heapsort(vector<int>&, int, int);
+        int     binary_search(vector<int>, int, int, int);
 };
 
 void swap(int &a, int &b) {
@@ -100,16 +101,30 @@ void heapify_down(vector<int> &arr, int size, int parent) {
     }
 }
 
-void sort::heapsort(vector<int> &arr, int size) {
+void sort::heapsort(vector<int> &arr, int root, int size) {
 
-    for (int i = size/2-1; i >= 0; i--) {
+    for (int i = size/2-1; i >= root; i--) {
         heapify_down(arr, size, i);
     }
 
-    for (int i = size-1; i >= 0; i--) {
-        swap(arr[0], arr[i]);
-        heapify_down(arr, i, 0);
+    for (int i = size-1; i >= root; i--) {
+        swap(arr[root], arr[i]);
+        heapify_down(arr, i, root);
     }
+}
+
+int sort::binary_search(vector<int> arr, int low, int high, int x) {
+    while (low <= high) {
+        int mid = low + (high-low)/2;
+        if (arr[mid] == x) {
+            return mid;
+        } else if (arr[mid] > x) {
+            high = mid-1;
+        } else {
+            low = mid+1;
+        }
+    }
+    return -1;
 }
 
 #endif

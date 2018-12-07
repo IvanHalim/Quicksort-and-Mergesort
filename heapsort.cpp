@@ -35,24 +35,25 @@ void heapify_down(vector<int> &arr, int size, int parent) {
 }
 
 // Main function to do heap sort
-void heapsort(vector<int> &arr, int size) {
+void heapsort(vector<int> &arr, int root, int size) {
 
     /*
      * First we convert array arr[] into a heap using our heapify_down function
      * Bottom-up from the first non-leaf node to the root of the heap
      * (size/2-1) is the first non-leaf node
      */
-    for (int i = size/2-1; i >= 0; i--) {
+    for (int i = size/2-1; i >= root; i--) {
         heapify_down(arr, size, i);
     }
 
     /*
-     * Next we're going to put the maximum value of the heap
-     * To the right side of the array one by one
+     * Next we're going to extract the maximum value of the heap
+     * By swapping the value at the root of the heap with the value at the end of the heap
+     * Similar to how we remove the root value from a binary heap
      * Making sure that we heapify_down the unsorted array after each extraction
      */
-    for (int i = size-1; i >= 0; i--) {
-        swap(arr[0], arr[i]);
-        heapify_down(arr, i, 0);
+    for (int i = size-1; i >= root; i--) {
+        swap(arr[root], arr[i]);
+        heapify_down(arr, i, root);
     }
 }
